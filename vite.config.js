@@ -14,15 +14,18 @@ export default ({ mode }) => {
             }),
             vue({
                 template: {
-                 transformAssetUrls: {
-                   base: null,
-                   includeAbsolute: false,
-                   },
-                 },
-             }),
+                    transformAssetUrls: {
+                        base: null,
+                        includeAbsolute: false,
+                    },
+                },
+            }),
         ],
         server: {
-            port:  process.env.VITE_PORT
+            port:  process.env.VITE_PORT,
+            hmr: {
+                host: "localhost",
+            }
         }
     });
 }
